@@ -1,0 +1,20 @@
+function solucao(precos) {
+  
+  precos.sort((a, b) => a - b); 
+
+  let valor = 0;
+  const n = precos.length;
+
+  if (n >= 3) {
+  
+    const desconto = precos[0] / 2;
+    valor = precos.slice(1).reduce((total, valor) => total + valor, 0) + desconto;
+  } else {
+   
+    valor = precos.reduce((total, valor) => total + valor, 0);
+  }
+
+  console.log (valor);
+}
+  
+
